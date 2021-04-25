@@ -1,14 +1,22 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var svgToMiniDataURI = require('mini-svg-data-uri');
 
 
 module.exports = {
-  entry: './src/App.js',
-  plugins: [new MiniCssExtractPlugin()],
+  entry: './src/index.js',
+  devtool: false,
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'WebPack Test',
+      template: './src/index.html'
+    }),
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
