@@ -1,1 +1,1 @@
-# Simple React Config
+# Empty react project with a simple WebPack configuration including hot module replacement
