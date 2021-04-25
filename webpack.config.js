@@ -6,6 +6,9 @@ module.exports = {
   mode: 'development',
   devtool: false,
   plugins: [
+    /*
+    * HtmlWebpackPlugin is used to genereate index.html
+    */
     new HtmlWebpackPlugin({
       title: 'WebPack Test',
       template: './src/index.html'
