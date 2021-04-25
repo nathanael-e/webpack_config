@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 
 import App from './App.js'
 
-ReactDOM.render (
+console.log('Hello from Index');
+
+ReactDOM.render(
   <React.StrictMode>
-  <App/>
+    <App />
   </React.StrictMode>
-,
+  ,
   document.getElementById('root')
 );

@@ -5,7 +5,9 @@ var svgToMiniDataURI = require('mini-svg-data-uri');
 
 module.exports = {
   entry: './src/index.js',
+  mode: 'development',
   devtool: false,
+  target: 'web',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'WebPack Test',
@@ -23,18 +25,13 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.svg$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              generator: (content) => svgToMiniDataURI(content.toString()),
-            },
-          },
-        ],
+        exclude: /node_modules/,
       },
     ],
   },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  }
 };
